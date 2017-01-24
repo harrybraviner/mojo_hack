@@ -18,7 +18,7 @@ module register (input clk,
         out_d = out_q;
     end
 
-    always @(posedge clk or posedge rst)
+    always @(posedge clk)
     begin
         if (rst == 1'b1) begin
             out_q <= 16'b0;
