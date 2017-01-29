@@ -1,4 +1,7 @@
-all: register_test program_counter_test arithmetic_logic_unit_test
+all: register_test program_counter_test arithmetic_logic_unit_test ram16_test
+
+ram16_test: src/memory/ram16.v src/tests/ram16_test.v
+	iverilog $^ -o tests/ram16
 
 arithmetic_logic_unit_test: src/arithmetic_logic_unit.v src/tests/arithmetic_logic_unit_test.v
 	iverilog $^ -o tests/arithmetic_logic_unit_test
